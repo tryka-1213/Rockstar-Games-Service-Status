@@ -12,7 +12,7 @@ getStatus()
     console.log(statuses)
    })
 ```
-Expected result: {redDeadOnline: {…}, gtaOnline: {…}, socialClub: {…}, launcher: {…}, lastUpdated: {…}} . . .
+Expected result: `{redDeadOnline: {…}, gtaOnline: {…}, socialClub: {…}, launcher: {…}, lastUpdated: {…}} . . .`
 
 
 ### Previews
