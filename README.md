@@ -1,7 +1,7 @@
 # Rockstar Games Service Status
 Get the Rockstar Games Service Status (for GTA Online, RDRO, and Social Club) easier with this package
 
-Revised version of [Androz2091's package](https://github.com/Androz2091/rockstar-games-status), but with promises
+Revised version of [Androz2091's package](https://github.com/Androz2091/rockstar-games-status)
 
 ### Usage
 ```js
