@@ -10,7 +10,7 @@ const { getStatus } = require("./index.js")
 getStatus()
   .then(statuses => {
     console.log(statuses)
-   })
+  })
 ```
 Expected result: `{redDeadOnline: {…}, gtaOnline: {…}, socialClub: {…}, launcher: {…}, lastUpdated: {…}} . . .`
 
