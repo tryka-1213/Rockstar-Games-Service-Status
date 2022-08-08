@@ -5,7 +5,7 @@ Revised version of [Androz2091's package](https://github.com/Androz2091/rockstar
 
 ### Usage
 ```js
-const { getStatus } = require("index.js")
+const { getStatus } = require("./index.js")
 
 getStatus()
   .then(statuses => {
