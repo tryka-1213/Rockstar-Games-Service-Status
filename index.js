@@ -1,17 +1,24 @@
 const axios = require("axios")
 
 module.exports = {
-    async getStatus(){
+    /**
+     * 
+     * @param {string} language 
+     * @returns
+     * ```
+     * Promise
+     * ```
+     */
+    async getStatus(language){
         return new Promise(async (resolve, reject) => {
             try {
-                var response = await axios({ method: "get", url: "https://support.rockstargames.com/services/status.json?tz=Europe/London" })
+                var response = await axios({ method: "get", url: `https://support.rockstargames.com/${language && language != "en" ? `${language}/` : ""}services/status.json?tz=Europe/London` })
             } catch {
-                // Reject the promise on error
                 return reject("Request to Rockstar Games Service Status was unsuccessful. This may be because the IP of this machine is blacklisted or temporarily banned")
             }
             
             let base = response.data.statuses
-            let updatedAt = new Date(response.data.updated.replace(", ", " ").replace(" at ", " "))
+            let updatedAt = response.data.updated
 
             const status = {
                 redDeadOnline: {
@@ -38,15 +45,11 @@ module.exports = {
                     "downloads": base[5].services_platforms.find(s => s.name == "Downloads").service_status.status,
                     "cloud_downloads": base[5].services_platforms.find(s => s.name == "Cloud Services").service_status.status
                 },
-                lastUpdated: {
-                    "full": updatedAt,
-                    "timestamp": Math.round(updatedAt.getTime() / 1000)
-            
-                }
+                lastUpdated: updatedAt,
+                locale: language
             }
-            
-            // Resolve the promise
-            resolve(status) 
+
+            resolve(status)
 
         })
 
