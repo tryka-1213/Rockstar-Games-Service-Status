@@ -7,7 +7,7 @@ Revised version of [Androz2091's package](https://github.com/Androz2091/rockstar
 ```js
 const { getStatus } = require("./index.js")
 
-getStatus()
+getStatus("en")
   .then(statuses => {
     console.log(statuses)
   })
