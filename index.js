@@ -4,9 +4,10 @@ module.exports = {
     /**
      * 
      * @param {string} language 
+     * Examples: "en", "es", "it"
      * @returns
      * ```
-     * Promise
+     * Promise<any>
      * ```
      */
     async getStatus(language){
