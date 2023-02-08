@@ -7,7 +7,7 @@ module.exports = {
      * Examples: "en", "es", "it"
      * @returns
      * ```
-     * Promise<any>
+     * Promise<obj>
      * ```
      */
     async getStatus(language){
